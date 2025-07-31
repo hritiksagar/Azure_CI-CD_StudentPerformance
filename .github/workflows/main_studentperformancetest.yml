@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: studentmlproject.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_64462a6985484f11acc365a1a477fe5f }}/mltest:${{ github.sha }}
+        tags: studentmlproject.azurecr.io/mltest:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'studentperformancetest'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_67f13016dd1f4c76810b840bdd570bd8 }}
-        images: 'studentmlproject.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_64462a6985484f11acc365a1a477fe5f }}/mltest:${{ github.sha }}'
+        images: 'studentmlproject.azurecr.io/mltest:${{ github.sha }}'
