@@ -1,6 +1,5 @@
 FROM python:3.13-rc-slim
 
-
 # Set working directory
 WORKDIR /app
 
